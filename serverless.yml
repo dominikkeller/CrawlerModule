@@ -1,0 +1,17 @@
+service: rescra
+
+provider:
+  name: aws
+  timeout: 50
+  runtime: python3.7
+
+functions:
+  crawl:
+    handler: handler.main
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
